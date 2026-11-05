@@ -1,28 +1,50 @@
 import './App.css'
 
+type ReportKind = 'bug' | 'feature'
+
+type Report = {
+  id: string
+  text: string
+  kind: ReportKind
+}
+
+
 function App() {
 
-return (
+  const sampleReport: Report = {
+    id: '1',
+    text: 'Navigation link is broken',
+    kind: 'bug',
+  }
 
-<main>
 
-<h1>Timothy Heiser</h1>
+  return (
 
-<h2>Senior Capstone Production Platform Test</h2>
+    <main>
 
-<p>
+    <h1>Timothy Heiser</h1>
 
-This site will present my software projects, engineering decisions,
+    <h2>Senior Capstone Production Platform Test</h2>
 
-and production systems.
+    <p>
 
-</p>
+    This site will present my software projects, engineering decisions,
 
-<p>Initial frontend setup in progress.</p>
+    and production systems.
 
-</main>
+    </p>
 
-)
+    <p>Initial frontend setup in progress.</p>
+
+    <section className="report-board">
+    <h2>Bugs & Feature Requests</h2>
+    <p>{sampleReport.text} ({sampleReport.kind})</p>
+    </section>
+
+
+    </main>
+
+  )
 
 }
 
